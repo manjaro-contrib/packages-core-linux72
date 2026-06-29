@@ -7,11 +7,11 @@
 _basekernel=7.2
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
-_commit=ef0c9f75a19532d7675384708fc8621e10850104
-_rc=rc0
+_commit=
+_rc=rc1
 pkgbase=linux${_basever}
-pkgver=7.2.0rc0
-pkgrel=2
+pkgver=7.2.0rc1
+pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -35,8 +35,8 @@ options=(
 )
 source=(#https://www.kernel.org/pub/linux/kernel/v7.x/linux-${_basekernel}.tar.xz
         #https://github.com/torvalds/linux/archive/refs/tags/v${_basekernel}.tar.gz
-        #https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
-        linux-${_basekernel}-${_rc}.tar.gz::https://github.com/torvalds/linux/archive/${_commit}.tar.gz
+        https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
+        #linux-${_basekernel}-${_rc}.tar.gz::https://github.com/torvalds/linux/archive/${_commit}.tar.gz
         #https://www.kernel.org/pub/linux/kernel/v7.x/patch-${pkgver}.xz
         config
         # ARCH Patches
@@ -46,8 +46,6 @@ source=(#https://www.kernel.org/pub/linux/kernel/v7.x/linux-${_basekernel}.tar.x
         0000-drm-amdgpu-fix-race-condition-in-amdgpu_vm_wait_idle-during-process-kill.patch
         # Turn off custom brightness-curve when nonsense is found in BIOS
         0001-drm-amd-Sanity-check-custom-brightness-curve-data-po.patch
-        # https://www.phoronix.com/news/AMD-Color-Management-Patches
-        0000-amd-display-move-AMD_PRIVATE_COLOR-to-Kconfig.patch
         # From Valve for Upstream (fixes suspend on deck target in inputplumber)
         0000-usb-vhci-hcd-Unconditionally-allow-system-suspend.patch
         # Manjaro Patches
@@ -91,13 +89,12 @@ else
   _srcdir="linux-${_basekernel}"
 fi
 
-sha256sums=('8bb7c3bf214ffcee5da9ae4533069ff0fcc0e146ba292258b7e7631946cdd6b8'
-            '5d8f8564b3a273d7a5c20f0cd4a7f4c2f90013715e63ce8444b7d8ffbf850030'
+sha256sums=('b460e74cfa0a428416881063821ef6aae8a6a4c69891b9ab10fcf4edf770ce0d'
+            'd443c6a860479748f36ab9fee447ebded6e0ebdc6d8e4a40d3b1016ef41d3627'
             'e5e98d62b63704cecdf32dbe6a9bafea6e70b23fa8e01fe96ca220ac6036392e'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
-            'ae19a89ac1a3852d08456e7d163baa30d8fc8bcb0e48d08aee1bc1549fb143ba'
             '512032c6b93fce24254da6cace7bf101c8f7c824761a0f99deed4b7724ac6f3e'
             '103688f3fceff664c919d94faab7a6948880710641110eaa71fe107ee06c37e9'
             'fdb4994534e896bcfa83a4f5764c8e2039f77c708f04cd1e4fc0ec1fc824c15e'
@@ -131,8 +128,8 @@ export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EP
 prepare() {
   cd $_srcdir
 
-  msg "set PATCHLEVEL to 2"
-  sed -ri "s|^(PATCHLEVEL =).*|\1 2|" Makefile
+  #msg "set PATCHLEVEL to 2"
+  #sed -ri "s|^(PATCHLEVEL =).*|\1 2|" Makefile
 
   msg "set EXTRAVERSION to ${_rc}"
   sed -ri "s|^(EXTRAVERSION =).*|\1 -${_rc}|" Makefile
