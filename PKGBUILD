@@ -9,7 +9,7 @@ _commit=
 _rc=rc5
 pkgbase=linux${_basever}
 pkgver=7.2.0rc5
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -75,6 +75,8 @@ source=(#https://www.kernel.org/pub/linux/kernel/v7.x/linux-${_basekernel}.tar.x
         0015-FOR-UPSTREAM-debug-by-default.patch
         0016-FOR-UPSTREAM-hid-asus-ally-grab-short-press-QAM-on-R.patch
         0017-FOR-UPSTREAM-hid-asus-ally-disable-wakeup-attribute-.patch
+        # OrangePi Neo patches
+        0001-iio-imu-bmi270-Match-PNP-ID-found-on-newer-OrangePi-NEO-firmware.patch
         # Zotac Zone patches
         0001-zotac-zone-hid-initial-impl.patch
         0002-xpad-gate-the-zotac-zone-PID-behind-if-IS_REACHABLE-.patch
@@ -119,6 +121,7 @@ sha256sums=('8be5bf245c5bc89927f15a9f575c04869c25a8d511d8b810ecd8a67e5b0dd51e'
             '7cd498aab2ec929315848366ca07b379315db7c081bf463f6590146534fb651c'
             '54841d11451eaea6eab712184a84fe3f119c1b5365fbca0c927129ebde3c16e8'
             '73ed3550e05774836772418418a5089d43709b1796c42141e75dbe78584369d8'
+            'fc358dd3b574e4f47d25952417107ca0e743d33125ed93866697a266cde9b76e'
             'b67f25c13e946b51712b0e828ebbf8bea980d339bd6effab17869f6a62e428df'
             'f53e0ad0892ab4bd85f55b4cbb829481eba28865cf835a46c80bc237e0771981'
             '138684588665b8f651dffb4e75c265a2b81f6bd7a606f75f8fc6814a4a63d3fd'
