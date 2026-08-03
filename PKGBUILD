@@ -97,7 +97,7 @@ else
 fi
 
 sha256sums=('bd3d491e9995e3a91b544e5af18df60e97aff46f270fad4b0cd10bd48ea34f02'
-            '91eb01ebab136accecdf64dd10c435ea77b70bcf97d1c86f0352b4095798231a'
+            'd2033907d3ae3fc141909c93cc3aaafd8a93be74c8fe762c13d5bcdd3738f7db'
             'e5e98d62b63704cecdf32dbe6a9bafea6e70b23fa8e01fe96ca220ac6036392e'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
