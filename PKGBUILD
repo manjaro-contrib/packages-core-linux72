@@ -6,10 +6,10 @@ _basekernel=7.2
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
 _commit=
-_rc=rc7
+_rc=
 pkgbase=linux${_basever}
-pkgver=7.2.0rc7
-pkgrel=2
+pkgver=7.2.0
+pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -38,9 +38,9 @@ options=(
   !debug
   !strip
 )
-source=(#https://www.kernel.org/pub/linux/kernel/v7.x/linux-${_basekernel}.tar.xz
+source=(https://www.kernel.org/pub/linux/kernel/v7.x/linux-${_basekernel}.tar.xz
         #https://github.com/torvalds/linux/archive/refs/tags/v${_basekernel}.tar.gz
-        https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
+        #https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
         #linux-${_basekernel}-${_rc}.tar.gz::https://github.com/torvalds/linux/archive/${_commit}.tar.gz
         #https://www.kernel.org/pub/linux/kernel/v7.x/patch-${pkgver}.xz
         config
@@ -96,7 +96,7 @@ else
   _srcdir="linux-${_basekernel}"
 fi
 
-sha256sums=('aa217866eea669da8d84212161131a7315bb94dafcd739a9e9e294d65e748c10'
+sha256sums=('f9fef3d14c0df53819026f4be74459835c2a0b0dcbf5b5bbd9ea19f0829402b3'
             'd258dcf30a3cd66f75691f71a10243b6769967cc06212f406cf818c24b1fa6e5'
             'e5e98d62b63704cecdf32dbe6a9bafea6e70b23fa8e01fe96ca220ac6036392e'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
