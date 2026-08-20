@@ -9,7 +9,7 @@ _commit=
 _rc=
 pkgbase=linux${_basever}
 pkgver=7.2.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -139,8 +139,8 @@ prepare() {
   #msg "set PATCHLEVEL to 2"
   #sed -ri "s|^(PATCHLEVEL =).*|\1 2|" Makefile
 
-  msg "set EXTRAVERSION to ${_rc}"
-  sed -ri "s|^(EXTRAVERSION =).*|\1 -${_rc}|" Makefile
+  #msg "set EXTRAVERSION to ${_rc}"
+  #sed -ri "s|^(EXTRAVERSION =).*|\1 -${_rc}|" Makefile
 
   echo "Setting version..."
   echo "-$pkgrel" > localversion.10-pkgrel
