@@ -38,11 +38,11 @@ options=(
   !debug
   !strip
 )
-source=(https://www.kernel.org/pub/linux/kernel/v7.x/linux-${_basekernel}.tar.xz
+source=(https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-${_basekernel}.tar.xz
         #https://github.com/torvalds/linux/archive/refs/tags/v${_basekernel}.tar.gz
         #https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
         #linux-${_basekernel}-${_rc}.tar.gz::https://github.com/torvalds/linux/archive/${_commit}.tar.gz
-        #https://www.kernel.org/pub/linux/kernel/v7.x/patch-${pkgver}.xz
+        #https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-${pkgver}.xz
         config
         # ARCH Patches
         0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
