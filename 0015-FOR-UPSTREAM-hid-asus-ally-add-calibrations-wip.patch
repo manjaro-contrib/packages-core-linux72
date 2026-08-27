@@ -1,7 +1,7 @@
-From 845a3a2056425f7ce32aeae7e16d1554ad283033 Mon Sep 17 00:00:00 2001
+From cd36ef2112b6d7223eabedf5713dc40ef368739b Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Thu, 10 Oct 2024 11:15:36 +1300
-Subject: [PATCH 14/17] [FOR-UPSTREAM] hid-asus-ally: add calibrations (wip)
+Subject: [PATCH 15/21] [FOR-UPSTREAM] hid-asus-ally: add calibrations (wip)
 
 Signed-off-by: Luke D. Jones <luke@ljones.dev>
 ---
@@ -143,5 +143,5 @@ index 5ca93f8342b1..e6ff4ba08a5c 100644
  	ally_cfg->vibration_intensity[0] = 0x64;
  	ally_cfg->vibration_intensity[1] = 0x64;
 -- 
-2.52.0
+2.55.0
 

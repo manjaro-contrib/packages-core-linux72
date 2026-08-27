@@ -57,24 +57,28 @@ source=(https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-${_basekernel}.tar.xz
         # Realtek patch
         0999-patch_realtek.patch
         # ROG ALLY Patches
-        # https://github.com/OpenGamingCollective/linux/pull/11
-        0001-FOR-UPSTREAM-hid-asus-ally-Add-joystick-LED-ring-sup.patch
-        0002-FOR-UPSTREAM-hid-asus-ally-do-MCY-FW-validation-in-h.patch
-        0003-FOR-UPSTREAM-hid-asus-ally-initial-Ally-X-gamepad-br.patch
-        0004-FOR-UPSTREAM-hid-asus-ally-initial-gamepad-configura.patch
-        0005-FOR-UPSTREAM-hid-asus-ally-add-button-remap-attribut.patch
-        0006-FOR-UPSTREAM-hid-asus-ally-add-gamepad-mode-selectio.patch
-        0007-FOR-UPSTREAM-hid-asus-ally-Turbo-settings-for-button.patch
-        0008-FOR-UPSTREAM-hid-asus-ally-add-vibration-intensity-s.patch
-        0009-FOR-UPSTREAM-hid-asus-ally-add-JS-deadzones.patch
-        0010-FOR-UPSTREAM-hid-asus-ally-add-trigger-deadzones.patch
-        0011-FOR-UPSTREAM-hid-asus-ally-add-anti-deadzones.patch
-        0012-FOR-UPSTREAM-hid-asus-ally-add-JS-response-curves.patch
-        0013-FOR-UPSTREAM-hid-asus-ally-mcu_version-attribute.patch
-        0014-FOR-UPSTREAM-hid-asus-ally-add-calibrations-wip.patch
-        0015-FOR-UPSTREAM-debug-by-default.patch
-        0016-FOR-UPSTREAM-hid-asus-ally-grab-short-press-QAM-on-R.patch
-        0017-FOR-UPSTREAM-hid-asus-ally-disable-wakeup-attribute-.patch
+        # https://github.com/OpenGamingCollective/linux/tree/features/asus
+        0001-FROM-ML-platform-x86-asus-armoury-gate-PPT-writes-be.patch
+        0002-FOR-UPSTREAM-hid-asus-ally-Add-joystick-LED-ring-sup.patch
+        0003-FOR-UPSTREAM-hid-asus-ally-do-MCY-FW-validation-in-h.patch
+        0004-FOR-UPSTREAM-hid-asus-ally-initial-Ally-X-gamepad-br.patch
+        0005-FOR-UPSTREAM-hid-asus-ally-initial-gamepad-configura.patch
+        0006-FOR-UPSTREAM-hid-asus-ally-add-button-remap-attribut.patch
+        0007-FOR-UPSTREAM-hid-asus-ally-add-gamepad-mode-selectio.patch
+        0008-FOR-UPSTREAM-hid-asus-ally-Turbo-settings-for-button.patch
+        0009-FOR-UPSTREAM-hid-asus-ally-add-vibration-intensity-s.patch
+        0010-FOR-UPSTREAM-hid-asus-ally-add-JS-deadzones.patch
+        0011-FOR-UPSTREAM-hid-asus-ally-add-trigger-deadzones.patch
+        0012-FOR-UPSTREAM-hid-asus-ally-add-anti-deadzones.patch
+        0013-FOR-UPSTREAM-hid-asus-ally-add-JS-response-curves.patch
+        0014-FOR-UPSTREAM-hid-asus-ally-mcu_version-attribute.patch
+        0015-FOR-UPSTREAM-hid-asus-ally-add-calibrations-wip.patch
+        0016-FOR-UPSTREAM-debug-by-default.patch
+        0017-FOR-UPSTREAM-hid-asus-ally-grab-short-press-QAM-on-R.patch
+        0018-FOR-UPSTREAM-hid-asus-ally-disable-wakeup-attribute-.patch
+        0019-HID-asus-do-not-send-keyboard-init-reports-to-touchp.patch
+        0020-MAINTAINED-EXTERNALLY-hid-asus-ally-Separate-trigger.patch
+        0021-MAINTAINED-EXTERNALLY-hid-asus-ally-add-sleep_animat.patch
         # OrangePi Neo patches
         0001-iio-imu-bmi270-Match-PNP-ID-found-on-newer-OrangePi-NEO-firmware.patch
         # Zotac Zone patches
@@ -105,23 +109,27 @@ sha256sums=('f9fef3d14c0df53819026f4be74459835c2a0b0dcbf5b5bbd9ea19f0829402b3'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '512032c6b93fce24254da6cace7bf101c8f7c824761a0f99deed4b7724ac6f3e'
             '103688f3fceff664c919d94faab7a6948880710641110eaa71fe107ee06c37e9'
-            'fdb4994534e896bcfa83a4f5764c8e2039f77c708f04cd1e4fc0ec1fc824c15e'
-            'a1e9a20dc86c2ea5ed5736336656f74e789f2c6c12704896c9f7e32729988500'
-            '82252a10edeb5848fb3ad6f79211b669894ebe07ebdb7c8f2ad72f1b0bd91364'
-            '2844e5b8e34da0b48020d3bb0e57724848f5f01683a29ec63019d1b164ecf509'
-            '4dca4da1dc5b21da4ebafe6c5072c0596eb530ab9e5603ddf0ccad2208146cac'
-            '755083d2f4093b2faa7a8ac0fee53fbc6b527a076af1698e97bf94b717891abd'
-            '68d500aab543edff8c5e3298d3be6fa0b78f700fb490ca52d14cb84051ffda15'
-            '0b4eeafdeddfd00938584f6e8e31f0316aa0245ada5db7d1492c455175ad7076'
-            '0e078d413f5c10fb39fb45608e49b3c58b3154df9c3cc79f0a5a21296a92f535'
-            '651dc8efc28cd03b145342db5a6446a80a7aa4bd7064e3ab1832292181951614'
-            'f7cabd28d1c7e4492c9c685d41676a16d0887221c76b3257dc4653e8cbbd0239'
-            '4dd33735647768755c07ca55f7c9aa0ead9a20ae2d929b2ade840a992d5fe08e'
-            '8bdcf5f00387d93086dde4748f5155a21b90b87e0fd562a127c365df6395b3eb'
-            '1dc1f5cc60e7f1298b4f3deea12dd9e6c47454fecee55b5f46888f22aec09b03'
-            '7cd498aab2ec929315848366ca07b379315db7c081bf463f6590146534fb651c'
-            '54841d11451eaea6eab712184a84fe3f119c1b5365fbca0c927129ebde3c16e8'
-            '73ed3550e05774836772418418a5089d43709b1796c42141e75dbe78584369d8'
+            'f31cbc70175b9712c7a81c4286c1c580bb1dad8d4eb75d0a5dcf57da959d01bb'
+            'edc2c201fd4ca430da977c3efead0e1d9e115ddd353c7077c1ed2564c42de53c'
+            '3ccd653645f8ffb7309998279082b52cf3734130ab2c7826dde476d79a60d2d2'
+            'dfe559cd8bee858f98019d2ef12b9ed37fb469ee7b2dd9697294b310985bdd97'
+            '942a83338dab5df515f4d5e4ce9af3c4f697b05f71da0854b05f6e97b03945a5'
+            'e5fa674557be8d2b2fc313d6bfdb2bd7813aa6b6daf180ebad94088e91139322'
+            '8cd762d9de47cbd5d94a237ba08e760a8a6b8b661a806f6e96cd78f2e72bac54'
+            'bf93f0405110cd2e5e28c4f157701ad3bfc9238be1816a0aa99eab13aad5b0e3'
+            'afb493a383d7a381b469657da9546bb9f8f229e2b04fe2e01aee66c4ae41fb59'
+            '03989773527c0beebddd6233018b934dd28a0de538f0824d38eab99c1f060b09'
+            '6ff9b5ad433c3237d8c09705cea4ca976482ab5b5855ba5fdd839b73e3ff986a'
+            'a4ddeff5a74797c5c8d36790525c4e6849f795b4bd16af41c0ad4aba1ecd9c94'
+            '2d28bd93775f1d322054c2e3c3131c9fff534708cfdf17e7c862a1345c950bb8'
+            '28669c788cd05e3def6f8903ddc002f642fecfb805cd1e0e9e542841b578167b'
+            '0c12fb9f262bf104a10eef9b6ebda099756d251fdfde6266ea799e72da02704f'
+            'd930164aa218c7865c0e37e29a83a65dacdd46ba65a4d458f4b72d7938a4c5e4'
+            '8787aaa51e5559169412793534081944908c3a592e4aea53aa8a7351297314cb'
+            '095dd0051a9bdafb5e39456cf49ae3d12d464e5ea9b03044499fba3cc5cd3ce1'
+            '4c1ca7375f8db74689f54b62a4b885a7b51bb69e4ed1b3bb30969fcd8eb6d252'
+            '5d5c16d083be67248679ae4e814131f33b5c3b54ac3d6ae41a97166ed5ff7d4a'
+            '09a2b4c6288dd6f44619abe910511f5cecc26e18eb5417c17279db546acc36e2'
             'fc358dd3b574e4f47d25952417107ca0e743d33125ed93866697a266cde9b76e'
             'b67f25c13e946b51712b0e828ebbf8bea980d339bd6effab17869f6a62e428df'
             'f53e0ad0892ab4bd85f55b4cbb829481eba28865cf835a46c80bc237e0771981'

@@ -1,7 +1,7 @@
-From 68284d81b730aced8c95111fb7a09553e7ebe460 Mon Sep 17 00:00:00 2001
+From 9cd165fe8e801628d6a8c4f939d8aa4c621d3ee9 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Sat, 5 Oct 2024 20:46:00 +1300
-Subject: [PATCH 08/17] [FOR-UPSTREAM] hid-asus-ally: add vibration intensity
+Subject: [PATCH 09/21] [FOR-UPSTREAM] hid-asus-ally: add vibration intensity
  settings
 
 Signed-off-by: Luke D. Jones <luke@ljones.dev>
@@ -167,5 +167,5 @@ index 63a3b5caa71c..6ac79ad3c5f2 100644
  #define ALLY_BTN_SHOW(_fname, _btn_name, _secondary)                           \
  	static ssize_t _fname##_show(struct device *dev,                       \
 -- 
-2.52.0
+2.55.0
 

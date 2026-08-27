@@ -1,7 +1,7 @@
-From bf84fb126cd62745745f07eb45e016e18328e820 Mon Sep 17 00:00:00 2001
+From 40e25a3b7b8d1f117442f5d414eb47899da72d62 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Mon, 26 Aug 2024 12:49:35 +1200
-Subject: [PATCH 01/17] [FOR-UPSTREAM] hid-asus-ally: Add joystick LED ring
+Subject: [PATCH 02/21] [FOR-UPSTREAM] hid-asus-ally: Add joystick LED ring
  support
 
 Adds basic support for the joystick RGB LED rings as a multicolour LED
@@ -16,18 +16,18 @@ Signed-off-by: Luke D. Jones <luke@ljones.dev>
  drivers/hid/Makefile        |   1 +
  drivers/hid/hid-asus-ally.c | 518 ++++++++++++++++++++++++++++++++++++
  drivers/hid/hid-asus-ally.h |  38 +++
- drivers/hid/hid-asus.c      |  17 +-
+ drivers/hid/hid-asus.c      |  15 ++
  drivers/hid/hid-asus.h      |  11 +
- 6 files changed, 593 insertions(+), 1 deletion(-)
+ 6 files changed, 592 insertions(+)
  create mode 100644 drivers/hid/hid-asus-ally.c
  create mode 100644 drivers/hid/hid-asus-ally.h
  create mode 100644 drivers/hid/hid-asus.h
 
 diff --git a/drivers/hid/Kconfig b/drivers/hid/Kconfig
-index 8a04a69b8f25..a5a4746c9e2e 100644
+index 48934c4f3c45..ff0edc1b127e 100644
 --- a/drivers/hid/Kconfig
 +++ b/drivers/hid/Kconfig
-@@ -202,6 +202,15 @@ config HID_ASUS
+@@ -200,6 +200,15 @@ config HID_ASUS
  	- GL553V series
  	- GL753V series
  
@@ -44,7 +44,7 @@ index 8a04a69b8f25..a5a4746c9e2e 100644
  	tristate "Aureal"
  	help
 diff --git a/drivers/hid/Makefile b/drivers/hid/Makefile
-index ef9169974bf0..fecfc8e43668 100644
+index 23e6e3dd0c56..b0660a20d352 100644
 --- a/drivers/hid/Makefile
 +++ b/drivers/hid/Makefile
 @@ -34,6 +34,7 @@ obj-$(CONFIG_HID_APPLETB_BL)	+= hid-appletb-bl.o
@@ -624,10 +624,10 @@ index 000000000000..eb8617c80c2a
 +	xpad_cmd_len_adz = 0x02,
 +};
 diff --git a/drivers/hid/hid-asus.c b/drivers/hid/hid-asus.c
-index 472bca54642b..546a32fb28ac 100644
+index befa990b3210..455f6e50960e 100644
 --- a/drivers/hid/hid-asus.c
 +++ b/drivers/hid/hid-asus.c
-@@ -34,6 +34,7 @@
+@@ -32,6 +32,7 @@
  #include <linux/leds.h>
  
  #include "hid-ids.h"
@@ -635,16 +635,16 @@ index 472bca54642b..546a32fb28ac 100644
  
  MODULE_AUTHOR("Yusuke Fujimaki <usk.fujimaki@gmail.com>");
  MODULE_AUTHOR("Brendan McGrath <redmcg@redmandi.dyndns.org>");
-@@ -1197,6 +1197,8 @@ static int asus_probe(struct hid_device
+@@ -1195,6 +1196,8 @@ static int asus_probe(struct hid_device *hdev, const struct hid_device_id *id)
+ {
  	struct hid_report_enum *rep_enum;
  	struct asus_drvdata *drvdata;
- 	struct hid_report *rep;
 +	struct usb_host_endpoint *ep;
 +	struct usb_interface *intf;
+ 	struct hid_report *rep;
  	bool is_vendor = false;
  	int ret;
- 
-@@ -1139,6 +1142,18 @@ static int asus_probe(struct hid_device *hdev, const struct hid_device_id *id)
+@@ -1209,6 +1212,18 @@ static int asus_probe(struct hid_device *hdev, const struct hid_device_id *id)
  
  	drvdata->quirks = id->driver_data;
  
@@ -681,5 +681,5 @@ index 000000000000..789a4ff3662c
 +
 +#endif	/* __HID_ASUS_H */
 -- 
-2.52.0
+2.55.0
 

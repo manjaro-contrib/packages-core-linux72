@@ -1,7 +1,7 @@
-From f1479104c5b0821a74b9647b0963e37525f786c0 Mon Sep 17 00:00:00 2001
+From e62ce2a6b981fd3b045adfdb96d280c4496237ee Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Sat, 5 Oct 2024 21:37:27 +1300
-Subject: [PATCH 10/17] [FOR-UPSTREAM] hid-asus-ally: add trigger deadzones
+Subject: [PATCH 11/21] [FOR-UPSTREAM] hid-asus-ally: add trigger deadzones
 
 Signed-off-by: Luke D. Jones <luke@ljones.dev>
 ---
@@ -112,5 +112,5 @@ index 3dc14a5226f3..32ed5caa3759 100644
  	xpad_cmd_set_leds = 0x08,
  	xpad_cmd_check_ready = 0x0A,
 -- 
-2.52.0
+2.55.0
 

@@ -1,7 +1,7 @@
-From 97a025951344a099db65b136cd2ef3931b9988cd Mon Sep 17 00:00:00 2001
+From 03cecb845395e0d065d423cabc0305619826309a Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Sat, 5 Oct 2024 21:32:41 +1300
-Subject: [PATCH 09/17] [FOR-UPSTREAM] hid-asus-ally: add JS deadzones
+Subject: [PATCH 10/21] [FOR-UPSTREAM] hid-asus-ally: add JS deadzones
 
 Signed-off-by: Luke D. Jones <luke@ljones.dev>
 ---
@@ -204,5 +204,5 @@ index 6ac79ad3c5f2..3dc14a5226f3 100644
  	static struct attribute *_fname##_attrs[] = {                     \
  		&dev_attr_##_fname.attr,                                  \
 -- 
-2.52.0
+2.55.0
 

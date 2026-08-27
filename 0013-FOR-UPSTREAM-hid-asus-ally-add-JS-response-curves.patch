@@ -1,7 +1,7 @@
-From 61e25785fe95ec3c51199227aef7bd11806ab8de Mon Sep 17 00:00:00 2001
+From 7c3b7187990b06c9918458307333c5789b393ba5 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Sun, 6 Oct 2024 21:22:40 +1300
-Subject: [PATCH 12/17] [FOR-UPSTREAM] hid-asus-ally: add JS response curves
+Subject: [PATCH 13/21] [FOR-UPSTREAM] hid-asus-ally: add JS response curves
 
 Signed-off-by: Luke D. Jones <luke@ljones.dev>
 ---
@@ -237,5 +237,5 @@ index 69f59592dd50..c83817589082 100644
  	static struct attribute *_fname##_attrs[] = {                     \
  		&dev_attr_##_fname.attr,                                  \
 -- 
-2.52.0
+2.55.0
 
